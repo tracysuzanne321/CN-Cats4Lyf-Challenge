@@ -7,7 +7,6 @@ const fetchImg = async () => {
       throw new Error(`${fetchedData.status} - ${fetchedData.statusText}`);
 
     const res = await fetchedData.json();
-    console.log(res);
 
     return res;
   } catch (err) {

@@ -7,12 +7,14 @@ const App = () => {
   const [catImgArr, setCatImgArr] = useState([]);
   const [catDataArr, setCatDataArr] = useState([]);
 
-  useEffect(async () => {
-    const imgs = await fetchImg();
-    const data = await fetchData();
+  useEffect(() => {
+    (async () => {
+      const data = fetchData();
+      const imgs = await fetchImg();
 
-    setCatImgArr(imgs);
-    setCatDataArr(data);
+      setCatImgArr(imgs);
+      setCatDataArr(data);
+    })();
   }, []);
 
   return (
@@ -22,7 +24,7 @@ const App = () => {
         {catImgArr.map((cat, i) => (
           <div id={cat.id} key={cat.id}>
             <img className="img" alt="" src={cat.url} />
-            <span>{catDataArr[i].name}</span>
+            <span>{catDataArr[i]?.name}</span>
           </div>
         ))}
       </div>
