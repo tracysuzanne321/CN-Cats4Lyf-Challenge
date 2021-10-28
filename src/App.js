@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import fetchImg from "./utils/fetchImg";
-import fetchData from "./utils/fetchData";
-import Navbar from "./utils/navbar";
-import Hero from "./utils/hero";
-import Footer from "./utils/footer";
-
+import { useEffect, useState } from 'react';
+import './App.css';
+import fetchImg from './utils/fetchImg';
+import fetchData from './utils/fetchData';
+import Navbar from './utils/navbar';
+import Hero from './utils/hero';
+import Footer from './utils/footer';
+import Tile from './utils/tile';
 
 const App = () => {
   const [catImgArr, setCatImgArr] = useState([]);
   const [catDataArr, setCatDataArr] = useState([]);
+  const [cart, setCart] = useState([]); // stores value of the items in basket
 
   useEffect(() => {
     (async () => {
@@ -29,12 +30,20 @@ const App = () => {
         </nav>
         <h1>Cats4Lyf</h1>
         <Hero />
-        {catImgArr.map((cat, i) => (
-          <div id={cat.id} key={cat.id}>
-            <img className="img" alt="" src={cat.url} />
-            <span>{catDataArr[i]?.name}</span>
-          </div>
-        ) ) }
+        <div className="gallery">
+          {catImgArr.map((cat, i) => (
+            // name, image, price, id, setCart, cart
+            <Tile
+              name={catDataArr[i]?.name}
+              image={cat.url}
+              price={catDataArr[i].price}
+              key={cat.id}
+              id={cat.id}
+              setCart={setCart}
+              cart={cart}
+            />
+          ))}
+        </div>
         <Footer />
       </div>
     </>
