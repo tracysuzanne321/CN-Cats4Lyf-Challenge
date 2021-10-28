@@ -11,7 +11,7 @@ const App = () => {
     (async () => {
       const data = fetchData();
       const imgs = await fetchImg();
-
+      console.log(data);
       setCatImgArr(imgs);
       setCatDataArr(data);
     })();
