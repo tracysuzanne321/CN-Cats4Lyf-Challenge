@@ -6,6 +6,7 @@ import Navbar from './utils/navbar';
 import Hero from './utils/hero';
 import Footer from './utils/footer';
 import Tile from './utils/tile';
+import Shop from './utils/shop';
 
 const App = () => {
   const [catImgArr, setCatImgArr] = useState([]);
@@ -16,11 +17,21 @@ const App = () => {
     (async () => {
       const data = fetchData();
       const imgs = await fetchImg();
-      console.log(data);
-      setCatImgArr(imgs);
+
       setCatDataArr(data);
+      setCatImgArr(imgs);
     })();
   }, []);
+
+  const handleSetCart = (e, obj) => {
+    const val = e.target.dataset.value;
+
+    if (val === 'add') {
+      setCart([...cart, obj]);
+    } else {
+      //delete
+    }
+  };
 
   return (
     <>
@@ -41,10 +52,12 @@ const App = () => {
               id={cat.id}
               setCart={setCart}
               cart={cart}
+              handleSetCart={handleSetCart}
             />
           ))}
         </div>
         <Footer />
+        <Shop cart={cart} setCart={setCart} />
       </div>
     </>
   );
