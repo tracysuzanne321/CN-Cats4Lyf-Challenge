@@ -6,6 +6,7 @@ import Navbar from "./utils/navbar";
 import Hero from "./utils/hero";
 import Footer from "./utils/footer";
 
+
 const App = () => {
   const [catImgArr, setCatImgArr] = useState([]);
   const [catDataArr, setCatDataArr] = useState([]);
@@ -33,7 +34,7 @@ const App = () => {
             <img className="img" alt="" src={cat.url} />
             <span>{catDataArr[i]?.name}</span>
           </div>
-        ))}
+        ) ) }
         <Footer />
       </div>
     </>
