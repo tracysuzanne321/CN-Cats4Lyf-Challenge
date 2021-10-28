@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import fetchImg from './utils/fetchImg';
-import fetchData from './utils/fetchData';
+import { useEffect, useState } from "react";
+import "./App.css";
+import fetchImg from "./utils/fetchImg";
+import fetchData from "./utils/fetchData";
+import Navbar from "./utils/navbar";
 
 const App = () => {
   const [catImgArr, setCatImgArr] = useState([]);
@@ -20,6 +21,9 @@ const App = () => {
   return (
     <>
       <div>
+        <nav>
+          <Navbar />
+        </nav>
         <h1>Cats4Lyf</h1>
         {catImgArr.map((cat, i) => (
           <div id={cat.id} key={cat.id}>
