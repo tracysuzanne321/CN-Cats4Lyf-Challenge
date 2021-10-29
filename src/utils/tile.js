@@ -1,4 +1,5 @@
-import { BsCartPlus } from 'react-icons/bs';
+import { BsCartPlus } from "react-icons/bs";
+import "../styles/tile.css";
 
 const Tile = ({ name, image, price, id, handleSetCart, handleOpenAbout }) => {
   const submitToCart = e => {
