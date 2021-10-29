@@ -45,16 +45,17 @@ const Shop = ({ cart, setCart, isOpen, handleClose }) => {
         &nbsp;
       </div>
       <div className={`modal-cart ${isOpen ? '' : 'hidden'} `}>
-        SHOP
-        {/* <div>{listItems}</div> */}
-        <div>CART</div>
+        Shopping Cart
+        <div>Cart</div>
         <div>{cartItems}</div>
-        <div>Total: £{cartTotal}</div>
+        <div>{price}</div>
+        <div style={{border: "1px solid red",color:"blue", fontSize:"25px", display: "flex", justifyContent:"center", position:"absolute"}}>Total: £{cartTotal}</div>
         <IconContext.Provider value={{ color: 'black', size: '15px' }}>
           <button className="modal-close" onClick={handleClose}>
             <AiOutlineClose />
           </button>
         </IconContext.Provider>
+
       </div>
     </>
   );

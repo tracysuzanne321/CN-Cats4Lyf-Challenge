@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Sacramento&display=swap");
 
 * {
   margin: auto;
@@ -103,8 +103,9 @@ a {
 }
 
 .cat-tile img:hover {
-  transform: scale(1.1) translate(0, -10px);
-  transition: all 0.5s ease-out;
+  transition: all 3s linear;
+  transform: scale(1.1) translate(0, -5%);
+  transition: 3s ease-in-out;
 }
 
 .tile-cart {
@@ -236,7 +237,7 @@ span {
   padding: 15px;
   opacity: 1;
   visibility: visible;
-
+  font-size: 15px;
   transition: opacity 0.5s ease-in;
 }
 
