@@ -33,7 +33,7 @@ const Shop = ({ cart, setCart, isOpen, handleClose }) => {
   //variable that displays the new formatted array from the cart array.
   const cartItems = cart.map(el => (
     <div key={el.id}>
-      {`${el.name}: $${el.price}`}
+      {`${el.name}: £${el.price}`}
       <input type="submit" value="remove" onClick={() => removeFromCart(el)} />
     </div>
   ));
@@ -48,14 +48,23 @@ const Shop = ({ cart, setCart, isOpen, handleClose }) => {
         Shopping Cart
         <div>Cart</div>
         <div>{cartItems}</div>
-        <div>{price}</div>
-        <div style={{border: "1px solid red",color:"blue", fontSize:"25px", display: "flex", justifyContent:"center", position:"absolute"}}>Total: £{cartTotal}</div>
+        <div
+          style={{
+            border: '1px solid red',
+            color: 'blue',
+            fontSize: '25px',
+            display: 'flex',
+            justifyContent: 'center',
+            position: 'absolute',
+          }}
+        >
+          Total: £{cartTotal}
+        </div>
         <IconContext.Provider value={{ color: 'black', size: '15px' }}>
           <button className="modal-close" onClick={handleClose}>
             <AiOutlineClose />
           </button>
         </IconContext.Provider>
-
       </div>
     </>
   );
