@@ -7,7 +7,7 @@ import Hero from './utils/hero';
 import Footer from './utils/footer';
 import Tile from './utils/tile';
 import Shop from './utils/shop';
-import About from './utils/About';
+import About from './utils/about';
 
 const App = () => {
   const [catImgArr, setCatImgArr] = useState([]);
