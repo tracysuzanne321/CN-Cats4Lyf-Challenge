@@ -282,7 +282,10 @@ span {
 }
 
 .about-img {
-  max-width: 250px;
+  height: 250px;
+  width: auto;
+  border: solid 5px  rgb(147, 178, 153);
+  margin: 10px 0 10px 0;
 }
 
 .removeButton{

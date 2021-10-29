@@ -21,8 +21,8 @@ const About = ({
           transform: 'translate(-50%, calc(100vh / 2 - 50%))',
         }}
       >
-        <h3>{name}</h3>
-        <h3>{price}</h3>
+        <h1>{name}</h1>
+        <h4>£{price}</h4>
         <img className="about-img" src={url} alt="" />
         <p>{breed}</p>
         <p>{city}</p>
