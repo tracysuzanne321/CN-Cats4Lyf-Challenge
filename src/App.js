@@ -12,6 +12,7 @@ const App = () => {
   const [catImgArr, setCatImgArr] = useState([]);
   const [catDataArr, setCatDataArr] = useState([]);
   const [cart, setCart] = useState([]); // stores value of the items in basket
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -33,14 +34,22 @@ const App = () => {
     }
   };
 
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
-      <div className ="app-container">
-        <nav className= "nav-bar">
-          <Navbar />
+      <div className="app-container">
+        <nav className="nav-bar">
+          <Navbar handleOpen={handleOpen} />
         </nav>
         <div className="hero">
-        <h1>Cats4Lyf</h1>
+          <h1>Cats4Lyf</h1>
           <Hero />
         </div>
         <h3>Cats for Sale</h3>
@@ -59,12 +68,17 @@ const App = () => {
             />
           ))}
         </div>
-          <div className="footer">
-            <Footer />
-          </div>
-          <div className="shop">
-            <Shop cart={ cart } setCart={ setCart } />
-          </div>
+        <div className="footer">
+          <Footer />
+        </div>
+        <div className="shop">
+          <Shop
+            isOpen={isOpen}
+            handleClose={handleClose}
+            cart={cart}
+            setCart={setCart}
+          />
+        </div>
       </div>
     </>
   );
