@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { IconContext } from 'react-icons';
+import { AiOutlineClose } from 'react-icons/ai';
 
 //shopping cart needs to be state object. setCart triggers when clicked button (handler paired).  functions to add and remove it should be an array that stores the id and image of cat so we can use the array index to map which one it is.  find index method may be hte easiest way.
 
@@ -48,9 +50,11 @@ const Shop = ({ cart, setCart, isOpen, handleClose }) => {
         <div>CART</div>
         <div>{cartItems}</div>
         <div>Total: £{cartTotal}</div>
-        <button className="modal-close" onClick={handleClose}>
-          X
-        </button>
+        <IconContext.Provider value={{ color: 'black', size: '15px' }}>
+          <button className="modal-close" onClick={handleClose}>
+            <AiOutlineClose />
+          </button>
+        </IconContext.Provider>
       </div>
     </>
   );
