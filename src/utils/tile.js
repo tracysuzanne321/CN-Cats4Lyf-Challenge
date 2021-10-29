@@ -1,7 +1,8 @@
-import { BsCartPlus } from 'react-icons/bs';
+import { BsCartPlus } from "react-icons/bs";
+import "../styles/tile.css";
 
 const Tile = ({ name, image, price, id, handleSetCart }) => {
-  const submitToCart = e => {
+  const submitToCart = (e) => {
     e.preventDefault();
 
     handleSetCart(e, {
@@ -17,10 +18,11 @@ const Tile = ({ name, image, price, id, handleSetCart }) => {
         <img src={image} alt="" value="About"></img>
       </a>
       <h2>{name}</h2>
-      <h4>£{ price }</h4>
+      <h4>£{price}</h4>
       <div className="tile-cart">
-        <BsCartPlus data-value="add" onClick={ submitToCart }/><span>Add to cart</span>
-        </div>
+        <BsCartPlus data-value="add" onClick={submitToCart} />
+        <span>Add to cart</span>
+      </div>
     </div>
   );
 };
