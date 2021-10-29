@@ -30,7 +30,7 @@ const App = () => {
   const handleSetCart = (e, obj) => {
     const val = e.target.dataset.value;
 
-    if (val === 'add') {
+    if (val === "add") {
       setCart([...cart, obj]);
     } else {
       //delete
@@ -49,9 +49,9 @@ const App = () => {
     body.style = 'overflow: unset; height: unset';
   };
 
-  const handleOpenAbout = id => {
+  const handleOpenAbout = (id) => {
     setIsAboutOpen(true);
-    const i = catImgArr.findIndex(cat => cat.id === id);
+    const i = catImgArr.findIndex((cat) => cat.id === id);
     const top = window.scrollY;
     const body = document.querySelector('body');
     body.style = 'overflow: hidden; height: 100%';
@@ -79,7 +79,7 @@ const App = () => {
     <>
       <div className="app-container">
         <nav className="nav-bar">
-          <Navbar handleOpen={handleOpen} />
+          <Navbar handleOpen={handleOpen} cart={cart} />
         </nav>
         <div className="hero">
           <h1>Cats4Lyf</h1>
