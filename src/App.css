@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Sacramento&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Sacramento&display=swap');
 
 * {
   margin: auto;
@@ -240,4 +240,8 @@ span {
 .modal-cart.hidden {
   opacity: 0;
   visibility: hidden;
+}
+
+.about-img {
+  max-width: 250px;
 }
