@@ -25,6 +25,7 @@
 
 .shop-cart {
   margin: 0 25px;
+  display: flex;
 }
 .shop-cart:hover {
   cursor: pointer;
