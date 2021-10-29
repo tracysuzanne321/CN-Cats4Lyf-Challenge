@@ -71,7 +71,7 @@ const App = () => {
     <>
       <div className="app-container">
         <nav className="nav-bar">
-          <Navbar handleOpen={handleOpen} />
+          <Navbar handleOpen={handleOpen} cart={cart} />
         </nav>
         <div className="hero">
           <h1>Cats4Lyf</h1>
