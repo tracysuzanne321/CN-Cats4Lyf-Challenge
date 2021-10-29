@@ -4,13 +4,15 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Navbar = () => {
   return (
+    <div className="shop-cart">
     <a href="link">
-      <IconContext.Provider value={{ color: "green", size: "50px" }}>
-        <div>
+      <IconContext.Provider value={{ color: "black", size: "25px", marginLeft:"100px" }}>
+        <div className="shop-cart">
           <AiOutlineShoppingCart />
         </div>
       </IconContext.Provider>
-    </a>
+      </a>
+      </div>
   );
 };
 

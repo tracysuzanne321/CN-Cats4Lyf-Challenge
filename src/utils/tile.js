@@ -17,8 +17,10 @@ const Tile = ({ name, image, price, id, handleSetCart }) => {
         <img src={image} alt="" value="About"></img>
       </a>
       <h2>{name}</h2>
-      <h3>£{price}</h3>
-      <BsCartPlus data-value="add" onClick={submitToCart} />
+      <h4>£{ price }</h4>
+      <div className="tile-cart">
+        <BsCartPlus data-value="add" onClick={ submitToCart }/><span>Add to cart</span>
+        </div>
     </div>
   );
 };

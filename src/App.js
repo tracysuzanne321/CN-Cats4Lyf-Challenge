@@ -35,12 +35,15 @@ const App = () => {
 
   return (
     <>
-      <div>
-        <nav>
+      <div className ="app-container">
+        <nav className= "nav-bar">
           <Navbar />
         </nav>
+        <div className="hero">
         <h1>Cats4Lyf</h1>
-        <Hero />
+          <Hero />
+        </div>
+        <h3>Cats for Sale</h3>
         <div className="gallery">
           {catImgArr.map((cat, i) => (
             // name, image, price, id, setCart, cart
@@ -56,8 +59,12 @@ const App = () => {
             />
           ))}
         </div>
-        <Footer />
-        <Shop cart={cart} setCart={setCart} />
+          <div className="footer">
+            <Footer />
+          </div>
+          <div className="shop">
+            <Shop cart={ cart } setCart={ setCart } />
+          </div>
       </div>
     </>
   );
