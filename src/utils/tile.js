@@ -1,8 +1,8 @@
 import { BsCartPlus } from "react-icons/bs";
 import "../styles/tile.css";
 
-const Tile = ({ name, image, price, id, handleSetCart }) => {
-  const submitToCart = (e) => {
+const Tile = ({ name, image, price, id, handleSetCart, handleOpenAbout }) => {
+  const submitToCart = e => {
     e.preventDefault();
 
     handleSetCart(e, {
@@ -12,9 +12,15 @@ const Tile = ({ name, image, price, id, handleSetCart }) => {
       image: image,
     });
   };
+
+  const openAbout = e => {
+    e.preventDefault();
+    handleOpenAbout(id);
+  };
+
   return (
     <div className="cat-tile">
-      <a href="./about">
+      <a onClick={openAbout} href="./about">
         <img src={image} alt="" value="About"></img>
       </a>
       <h2>{name}</h2>

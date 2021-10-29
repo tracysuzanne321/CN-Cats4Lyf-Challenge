@@ -7,12 +7,15 @@ import Hero from './utils/hero';
 import Footer from './utils/footer';
 import Tile from './utils/tile';
 import Shop from './utils/shop';
+import About from './utils/About';
 
 const App = () => {
   const [catImgArr, setCatImgArr] = useState([]);
   const [catDataArr, setCatDataArr] = useState([]);
   const [cart, setCart] = useState([]); // stores value of the items in basket
   const [isOpen, setIsOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [aboutCat, setAboutCat] = useState({});
 
   useEffect(() => {
     (async () => {
@@ -42,6 +45,28 @@ const App = () => {
     setIsOpen(false);
   };
 
+  const handleOpenAbout = id => {
+    setIsAboutOpen(true);
+    const i = catImgArr.findIndex(cat => cat.id === id);
+    const top = window.scrollY;
+
+    const thisCat = {
+      url: catImgArr[i].url,
+      name: catDataArr[i].name,
+      price: catDataArr[i].price,
+      breed: catDataArr[i].breed,
+      city: catDataArr[i].city,
+      age: catDataArr[i].age,
+      gender: catDataArr[i].gender,
+      style: { top: top },
+    };
+    setAboutCat(thisCat);
+  };
+
+  const handleCloseAbout = () => {
+    setIsAboutOpen(false);
+  };
+
   return (
     <>
       <div className="app-container">
@@ -55,7 +80,6 @@ const App = () => {
         <h3>Cats for Sale</h3>
         <div className="gallery">
           {catImgArr.map((cat, i) => (
-            // name, image, price, id, setCart, cart
             <Tile
               name={catDataArr[i]?.name}
               image={cat.url}
@@ -65,6 +89,7 @@ const App = () => {
               setCart={setCart}
               cart={cart}
               handleSetCart={handleSetCart}
+              handleOpenAbout={handleOpenAbout}
             />
           ))}
         </div>
@@ -77,6 +102,13 @@ const App = () => {
             handleClose={handleClose}
             cart={cart}
             setCart={setCart}
+          />
+        </div>
+        <div className="about">
+          <About
+            cat={aboutCat}
+            isOpen={isAboutOpen}
+            handleClose={handleCloseAbout}
           />
         </div>
       </div>
