@@ -2,7 +2,7 @@
 
 * {
   margin: auto;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
 }
 
@@ -37,7 +37,7 @@
 }
 
 h1 {
-  font-family: 'Sacramento', cursive;
+  font-family: "Sacramento", cursive;
   font-size: 45px;
   letter-spacing: normal;
 }
@@ -48,7 +48,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'Sacramento', cursive;
+  font-family: "Sacramento", cursive;
   font-size: 35px;
   margin: 50px auto;
   text-align: center;
@@ -57,7 +57,7 @@ h3 {
 }
 
 h3::before {
-  content: '';
+  content: "";
   display: block;
   width: 440px;
   height: 2px;
@@ -68,7 +68,7 @@ h3::before {
 }
 
 h3::after {
-  content: '';
+  content: "";
   display: block;
   width: 440px;
   height: 2px;
@@ -100,19 +100,12 @@ a {
   object-fit: cover;
   margin-top: 30px;
   border-radius: 5px;
-<<<<<<< HEAD
+
   transition: all 0.5s ease-in-out;
 }
 
 .cat-tile img:hover {
-  transform: scale(1.1) translate(0, -10px);
-=======
-  transition: 0.5s ease-in-out;
-}
-
-.cat-tile img:hover {
   transform: scale(1.1) translate(0, -5%);
->>>>>>> 7888ad3b4610a1b74743ccd6683b43c16c7d2ca5
 }
 
 .tile-cart {
