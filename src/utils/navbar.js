@@ -2,7 +2,7 @@ import React from 'react';
 import { IconContext } from 'react-icons';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
-const Navbar = ({ handleOpen }) => {
+const Navbar = ({ handleOpen, cart }) => {
   return (
     <div className="shop-cart">
       <IconContext.Provider
@@ -10,6 +10,7 @@ const Navbar = ({ handleOpen }) => {
       >
         <div onClick={handleOpen} className="shop-cart">
           <AiOutlineShoppingCart />
+          <span>{cart.length ? cart.length + ' cats in basket' : ''}</span>
         </div>
       </IconContext.Provider>
     </div>
