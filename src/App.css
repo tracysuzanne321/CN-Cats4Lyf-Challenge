@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Sacramento&display=swap');
 
-  *{
+* {
   margin: auto;
-  font-family:'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  
-  }
-  
-.app-container{
-display: flex;
-flex-direction: column;
-width: 100%;
-
 }
 
-.nav-bar{
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-bar {
   background-color: rgb(147, 178, 153);
   width: 100%;
   height: 88px;
@@ -23,28 +23,28 @@ width: 100%;
   align-items: center;
 }
 
-.shop-cart{
+.shop-cart {
   margin: 0 25px;
 }
 
-.hero{
+.hero {
   margin: 25px 0 25px 0;
   text-align: center;
 }
 
-h1{
+h1 {
   font-family: 'Sacramento', cursive;
   font-size: 45px;
   letter-spacing: normal;
 }
 
-h2{
+h2 {
   font-size: 22px;
   font-weight: 300;
 }
 
-h3{
-  font-family:'Sacramento', cursive; 
+h3 {
+  font-family: 'Sacramento', cursive;
   font-size: 35px;
   margin: 50px auto;
   text-align: center;
@@ -52,41 +52,41 @@ h3{
   position: relative;
 }
 
-h3::before{
-  content: "";
+h3::before {
+  content: '';
   display: block;
   width: 440px;
   height: 2px;
-  background: rgb(226, 226, 226) ;
+  background: rgb(226, 226, 226);
   position: absolute;
   right: 200px;
   top: 50%;
 }
 
-h3::after{
-  content: "";
+h3::after {
+  content: '';
   display: block;
   width: 440px;
   height: 2px;
-  background: rgb(226, 226, 226) ;
+  background: rgb(226, 226, 226);
   position: absolute;
   left: 200px;
   top: 50%;
 }
-a{
+a {
   text-decoration: none;
-color: black;
+  color: black;
 }
 
-.main-img{
+.main-img {
   margin: 25px 0 25px 0;
-  border: solid 8px rgb(147, 178, 153) ;
+  border: solid 8px rgb(147, 178, 153);
 }
 
-.gallery{
+.gallery {
   display: flex;
   flex-wrap: wrap;
-  max-width:90%;
+  max-width: 90%;
   margin-bottom: 100px;
 }
 
@@ -96,21 +96,21 @@ color: black;
   margin-top: 30px;
   border-radius: 5px;
 }
-.tile-cart{
+.tile-cart {
   font-size: 25px;
   cursor: pointer;
 }
 
-span{
+span {
   font-size: 12px;
   margin-left: 10px;
 }
 
-.shop{
+.shop {
   visibility: hidden;
 }
 
-.footer{
+.footer {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -119,59 +119,59 @@ span{
   border-top: 1px rgb(226, 226, 226) solid;
 }
 
-@media (max-width: 1050px){
-  h3::before{
+@media (max-width: 1050px) {
+  h3::before {
     width: 350px;
   }
-  
-  h3::after{
+
+  h3::after {
     width: 350px;
   }
 }
 
-@media (max-width: 950px){
-  h3::before{
+@media (max-width: 950px) {
+  h3::before {
     width: 300px;
   }
-  
-  h3::after{
+
+  h3::after {
     width: 300px;
   }
 }
 
-@media (max-width: 850px){
-  h3::before{
+@media (max-width: 850px) {
+  h3::before {
     width: 200px;
   }
-  
-  h3::after{
+
+  h3::after {
     width: 200px;
   }
-  .main-img{
+  .main-img {
     width: 500px;
   }
 }
 
-@media (max-width: 600px){
-  h3::before{
+@media (max-width: 600px) {
+  h3::before {
     width: 150px;
     right: 150px;
   }
-  
-  h3::after{
+
+  h3::after {
     width: 150px;
     left: 150px;
   }
-  .main-img{
+  .main-img {
     width: 400px;
   }
-  h1{
+  h1 {
     font-size: 30px;
   }
-  h2{
+  h2 {
     font-size: 15px;
   }
-  h3{
+  h3 {
     font-size: 25px;
   }
   .cat-tile img {
@@ -181,19 +181,63 @@ span{
   }
 }
 
-@media (max-width: 450px){
-  h3::before{
+@media (max-width: 450px) {
+  h3::before {
     width: 50px;
   }
-  
-  h3::after{
+
+  h3::after {
     width: 50px;
   }
-  .main-img{
+  .main-img {
     width: 300px;
   }
   .cat-tile img {
     width: 150px;
     height: 150px;
   }
+}
+
+/* modal styles */
+
+.modal-background {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in;
+}
+
+.modal-cart {
+  height: 75vh;
+  width: 75vw;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background-color: white;
+  padding: 15px;
+  opacity: 1;
+  visibility: visible;
+
+  transition: opacity 0.5s ease-in;
+}
+
+.modal-close {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  padding: 10px;
+}
+
+.modal-background.hidden,
+.modal-cart.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
