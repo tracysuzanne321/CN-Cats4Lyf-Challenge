@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import fetchImg from './utils/fetchImg';
-import fetchData from './utils/fetchData';
-import Navbar from './utils/navbar';
-import Hero from './utils/hero';
-import Footer from './utils/footer';
-import Tile from './utils/tile';
-import Shop from './utils/shop';
-import About from './utils/About';
+import { useEffect, useState } from "react";
+import "./App.css";
+import fetchImg from "./utils/fetchImg";
+import fetchData from "./utils/fetchData";
+import Navbar from "./utils/navbar";
+import Hero from "./utils/hero";
+import Footer from "./utils/footer";
+import Tile from "./utils/tile";
+import Shop from "./utils/shop";
+import About from "./utils/about";
 
 const App = () => {
   const [catImgArr, setCatImgArr] = useState([]);
@@ -30,7 +30,7 @@ const App = () => {
   const handleSetCart = (e, obj) => {
     const val = e.target.dataset.value;
 
-    if (val === 'add') {
+    if (val === "add") {
       setCart([...cart, obj]);
     } else {
       //delete
@@ -45,9 +45,9 @@ const App = () => {
     setIsOpen(false);
   };
 
-  const handleOpenAbout = id => {
+  const handleOpenAbout = (id) => {
     setIsAboutOpen(true);
-    const i = catImgArr.findIndex(cat => cat.id === id);
+    const i = catImgArr.findIndex((cat) => cat.id === id);
     const top = window.scrollY;
 
     const thisCat = {
