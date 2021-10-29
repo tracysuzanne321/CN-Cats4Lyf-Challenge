@@ -39,12 +39,7 @@
 
 h1 {
   font-family: "Sacramento", cursive;
-<<<<<<< HEAD
   font-size: 45px;
-=======
-  font-size: 50px;
-  font-weight: 300;
->>>>>>> e2d9bfd9bb1f085a951c7da1be448d61eb4e1d3e
   letter-spacing: normal;
 }
 
@@ -61,6 +56,11 @@ h3 {
   max-width: 600px;
   position: relative;
   z-index: -1;
+}
+
+h4{
+  font-size: 25px;
+  
 }
 
 h3::before {
@@ -247,7 +247,9 @@ span {
   visibility: visible;
   font-size: 15px;
   transition: opacity 0.5s ease-in;
+  text-align: center
 }
+
 
 .modal-close {
   position: absolute;
@@ -282,3 +284,18 @@ span {
 .about-img {
   max-width: 250px;
 }
+
+.removeButton{
+  margin: 15px;
+  padding: 10px 20px;
+  background-color: rgb(147, 178, 153);
+  border:none;
+  border-radius: 10px;
+}
+
+.total-price{
+  margin-top: 100px;
+  border-bottom: solid 1px black;
+  width: 40%;
+}
+

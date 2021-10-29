@@ -34,7 +34,7 @@ const Shop = ({ cart, setCart, isOpen, handleClose, top }) => {
   const cartItems = cart.map(el => (
     <div key={el.id}>
       {`${el.name}: £${el.price}`}
-      <input type="submit" value="remove" onClick={() => removeFromCart(el)} />
+      <input className="removeButton" type="submit" value="remove" onClick={() => removeFromCart(el)} />
     </div>
   ));
 
@@ -54,20 +54,11 @@ const Shop = ({ cart, setCart, isOpen, handleClose, top }) => {
           transform: 'translate(-50%, calc(100vh / 2 - 50%))',
         }}
       >
-        Shopping Cart
-        <div>Cart</div>
+        
+        <div><h1>Shopping Cart</h1></div>
         <div>{cartItems}</div>
-        <div
-          style={{
-            border: '1px solid red',
-            color: 'blue',
-            fontSize: '25px',
-            display: 'flex',
-            justifyContent: 'center',
-            position: 'absolute',
-          }}
-        >
-          Total: £{cartTotal}
+        <div>
+          <h4 className="total-price">Total Cost: £{cartTotal}</h4>
         </div>
         <IconContext.Provider value={{ color: 'black', size: '15px' }}>
           <button className="modal-close" onClick={handleClose}>
