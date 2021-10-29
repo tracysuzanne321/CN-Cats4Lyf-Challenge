@@ -4,7 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 //shopping cart needs to be state object. setCart triggers when clicked button (handler paired).  functions to add and remove it should be an array that stores the id and image of cat so we can use the array index to map which one it is.  find index method may be hte easiest way.
 
-const Shop = ({ cart, setCart, isOpen, handleClose }) => {
+const Shop = ({ cart, setCart, isOpen, handleClose, top }) => {
   const [cartTotal, setCartTotal] = useState(0); // cart total number of items in basket
   // const items = []; // cat API to go here.
 
@@ -41,10 +41,19 @@ const Shop = ({ cart, setCart, isOpen, handleClose }) => {
   //RETURNS variables
   return (
     <>
-      <div className={`modal-background ${isOpen ? '' : 'hidden'} `}>
+      <div
+        className={`modal-background ${isOpen ? '' : 'hidden'} `}
+        style={{ top: top }}
+      >
         &nbsp;
       </div>
-      <div className={`modal-cart ${isOpen ? '' : 'hidden'} `}>
+      <div
+        className={`modal-cart ${isOpen ? '' : 'hidden'} `}
+        style={{
+          top: top,
+          transform: 'translate(-50%, calc(100vh / 2 - 50%))',
+        }}
+      >
         Shopping Cart
         <div>Cart</div>
         <div>{cartItems}</div>

@@ -16,6 +16,7 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [aboutCat, setAboutCat] = useState({});
+  const [cartTop, setCartTop] = useState();
 
   useEffect(() => {
     (async () => {
@@ -30,7 +31,7 @@ const App = () => {
   const handleSetCart = (e, obj) => {
     const val = e.target.dataset.value;
 
-    if (val === "add") {
+    if (val === 'add') {
       setCart([...cart, obj]);
     } else {
       //delete
@@ -39,6 +40,7 @@ const App = () => {
 
   const handleOpen = () => {
     setIsOpen(true);
+    setCartTop(window.scrollY);
     const body = document.querySelector('body');
     body.style = 'overflow: hidden; height: 100%';
   };
@@ -49,9 +51,9 @@ const App = () => {
     body.style = 'overflow: unset; height: unset';
   };
 
-  const handleOpenAbout = (id) => {
+  const handleOpenAbout = id => {
     setIsAboutOpen(true);
-    const i = catImgArr.findIndex((cat) => cat.id === id);
+    const i = catImgArr.findIndex(cat => cat.id === id);
     const top = window.scrollY;
     const body = document.querySelector('body');
     body.style = 'overflow: hidden; height: 100%';
@@ -110,6 +112,7 @@ const App = () => {
             handleClose={handleClose}
             cart={cart}
             setCart={setCart}
+            top={cartTop}
           />
         </div>
         <div className="about">
