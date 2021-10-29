@@ -1,10 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Sacramento&display=swap");
 
 .App {
   text-align: center;
 }
-
+/* 
 img {
   width: 150px;
   height: 150px;
+} */
+
+.image {
+  display: flex;
+  justify-content: "flex-end";
+  background-color: black;
+  border-radius: 5px;
+  max-width: 100%;
+  max-height: 100%;
 }
