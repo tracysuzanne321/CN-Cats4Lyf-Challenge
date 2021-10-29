@@ -21,6 +21,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: fixed;
 }
 
 .shop-cart {
@@ -32,13 +33,14 @@
 }
 
 .hero {
-  margin: 25px 0 25px 0;
+  margin: 120px 0 25px 0;
   text-align: center;
 }
 
 h1 {
-  font-family: 'Sacramento', cursive;
-  font-size: 45px;
+  font-family: "Sacramento", cursive;
+  font-size: 50px;
+  font-weight: 300;
   letter-spacing: normal;
 }
 
@@ -54,6 +56,7 @@ h3 {
   text-align: center;
   max-width: 600px;
   position: relative;
+  z-index: -1;
 }
 
 h3::before {
@@ -92,6 +95,7 @@ a {
   flex-wrap: wrap;
   max-width: 90%;
   margin-bottom: 100px;
+  z-index: -2;
 }
 
 .cat-tile img {
@@ -100,19 +104,12 @@ a {
   object-fit: cover;
   margin-top: 30px;
   border-radius: 5px;
-<<<<<<< HEAD
+  box-shadow:  -4px 0px 15px 5px #828282;
   transition: all 0.5s ease-in-out;
 }
 
 .cat-tile img:hover {
-  transform: scale(1.1) translate(0, -10px);
-=======
-  transition: 0.5s ease-in-out;
-}
-
-.cat-tile img:hover {
   transform: scale(1.1) translate(0, -5%);
->>>>>>> 7888ad3b4610a1b74743ccd6683b43c16c7d2ca5
 }
 
 .tile-cart {
