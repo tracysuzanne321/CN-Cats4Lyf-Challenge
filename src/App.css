@@ -110,10 +110,6 @@ a {
   cursor: pointer;
 }
 
-.tile-cart {
-  transform: translateY(0) scale(1.25);
-}
-
 span {
   font-size: 12px;
   margin-left: 10px;
