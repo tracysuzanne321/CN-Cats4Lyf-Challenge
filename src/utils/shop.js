@@ -43,11 +43,12 @@ const Shop = ({ cart, setCart, isOpen, handleClose }) => {
         &nbsp;
       </div>
       <div className={`modal-cart ${isOpen ? '' : 'hidden'} `}>
-        SHOP
+        Shopping Cart
         {/* <div>{listItems}</div> */}
-        <div>CART</div>
+        <div>Cart</div>
         <div>{cartItems}</div>
-        <div>Total: £{cartTotal}</div>
+        {/* <div>{price}</div> */}
+        <div style={{border: "1px solid red",color:"blue", fontSize:"25px", display: "flex", justifyContent:"center", position:"absolute"}}>Total: £{cartTotal}</div>
         <button className="modal-close" onClick={handleClose}>
           X
         </button>
