@@ -23,10 +23,12 @@ const Tile = ({ name, image, price, id, handleSetCart, handleOpenAbout }) => {
       </a>
       <h2>{name}</h2>
       <h4>£{price}</h4>
-      <button data-value="add" onClick={submitToCart} className="tile-cart">
-        <BsCartPlus />
-        <span>Add to cart</span>
-      </button>
+      <div>
+        <button data-value="add" onClick={submitToCart} className="tile-cart">
+          <BsCartPlus />
+          <span>Add to cart</span>
+        </button>
+      </div>
     </div>
   );
 };
