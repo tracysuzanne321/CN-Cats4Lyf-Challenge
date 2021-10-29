@@ -1,3 +1,6 @@
+import { IconContext } from 'react-icons';
+import { AiOutlineClose } from 'react-icons/ai';
+
 const About = ({
   isOpen,
   handleClose,
@@ -25,9 +28,11 @@ const About = ({
         <p>{city}</p>
         <p>{age}</p>
         <p>{gender}</p>
-        <button className="modal-close" onClick={handleClose}>
-          X
-        </button>
+        <IconContext.Provider value={{ color: 'black', size: '15px' }}>
+          <button className="modal-close" onClick={handleClose}>
+            <AiOutlineClose />
+          </button>
+        </IconContext.Provider>
       </div>
     </>
   );

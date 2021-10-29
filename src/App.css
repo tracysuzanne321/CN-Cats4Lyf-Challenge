@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Sacramento&display=swap");
 
 * {
   margin: auto;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 400;
 }
 
@@ -26,6 +26,7 @@
 
 .shop-cart {
   margin: 0 25px;
+  display: flex;
 }
 .shop-cart:hover {
   cursor: pointer;
@@ -49,7 +50,7 @@ h2 {
 }
 
 h3 {
-  font-family: "Sacramento", cursive;
+  font-family: 'Sacramento', cursive;
   font-size: 35px;
   margin: 50px auto;
   text-align: center;
@@ -59,7 +60,7 @@ h3 {
 }
 
 h3::before {
-  content: "";
+  content: '';
   display: block;
   width: 440px;
   height: 2px;
@@ -70,7 +71,7 @@ h3::before {
 }
 
 h3::after {
-  content: "";
+  content: '';
   display: block;
   width: 440px;
   height: 2px;
@@ -104,12 +105,11 @@ a {
   margin-top: 30px;
   border-radius: 5px;
   box-shadow:  -4px 0px 15px 5px #828282;
+  transition: all 0.5s ease-in-out;
 }
 
 .cat-tile img:hover {
-  transform: scale(1.1) translate(0, -10px);
-  transition: all 0.5s ease-out;
-
+  transform: scale(1.1) translate(0, -5%);
 }
 
 .tile-cart {
@@ -241,7 +241,7 @@ span {
   padding: 15px;
   opacity: 1;
   visibility: visible;
-
+  font-size: 15px;
   transition: opacity 0.5s ease-in;
 }
 
@@ -249,7 +249,24 @@ span {
   position: absolute;
   top: 2%;
   right: 2%;
-  padding: 10px;
+  padding: 10px 15px;
+  background-color: rgb(147, 178, 153);
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  will-change: transform;
+  transition: transform 0.2s;
+}
+
+.modal-close:hover {
+  transform: translateY(-2px);
+}
+
+.modal-close:active {
+  transform: translateY(-1px);
 }
 
 .modal-background.hidden,

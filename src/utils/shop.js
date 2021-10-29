@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { IconContext } from 'react-icons';
+import { AiOutlineClose } from 'react-icons/ai';
 
 //shopping cart needs to be state object. setCart triggers when clicked button (handler paired).  functions to add and remove it should be an array that stores the id and image of cat so we can use the array index to map which one it is.  find index method may be hte easiest way.
 
@@ -31,7 +33,7 @@ const Shop = ({ cart, setCart, isOpen, handleClose }) => {
   //variable that displays the new formatted array from the cart array.
   const cartItems = cart.map(el => (
     <div key={el.id}>
-      {`${el.name}: $${el.price}`}
+      {`${el.name}: £${el.price}`}
       <input type="submit" value="remove" onClick={() => removeFromCart(el)} />
     </div>
   ));
@@ -43,14 +45,26 @@ const Shop = ({ cart, setCart, isOpen, handleClose }) => {
         &nbsp;
       </div>
       <div className={`modal-cart ${isOpen ? '' : 'hidden'} `}>
-        SHOP
-        {/* <div>{listItems}</div> */}
-        <div>CART</div>
+        Shopping Cart
+        <div>Cart</div>
         <div>{cartItems}</div>
-        <div>Total: £{cartTotal}</div>
-        <button className="modal-close" onClick={handleClose}>
-          X
-        </button>
+        <div
+          style={{
+            border: '1px solid red',
+            color: 'blue',
+            fontSize: '25px',
+            display: 'flex',
+            justifyContent: 'center',
+            position: 'absolute',
+          }}
+        >
+          Total: £{cartTotal}
+        </div>
+        <IconContext.Provider value={{ color: 'black', size: '15px' }}>
+          <button className="modal-close" onClick={handleClose}>
+            <AiOutlineClose />
+          </button>
+        </IconContext.Provider>
       </div>
     </>
   );
