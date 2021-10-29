@@ -39,16 +39,22 @@ const App = () => {
 
   const handleOpen = () => {
     setIsOpen(true);
+    const body = document.querySelector('body');
+    body.style = 'overflow: hidden; height: 100%';
   };
 
   const handleClose = () => {
     setIsOpen(false);
+    const body = document.querySelector('body');
+    body.style = 'overflow: unset; height: unset';
   };
 
   const handleOpenAbout = id => {
     setIsAboutOpen(true);
     const i = catImgArr.findIndex(cat => cat.id === id);
     const top = window.scrollY;
+    const body = document.querySelector('body');
+    body.style = 'overflow: hidden; height: 100%';
 
     const thisCat = {
       url: catImgArr[i].url,
@@ -65,6 +71,8 @@ const App = () => {
 
   const handleCloseAbout = () => {
     setIsAboutOpen(false);
+    const body = document.querySelector('body');
+    body.style = 'overflow: unset; height: unset';
   };
 
   return (
