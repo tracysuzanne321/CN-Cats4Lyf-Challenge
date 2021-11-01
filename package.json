@@ -1,5 +1,4 @@
 {
-  "homepage": "https://james-arn.github.io/Cats4Lyf/",
   "name": "cats4lyf",
   "version": "0.1.0",
   "private": true,
@@ -44,5 +43,6 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"
-  }
+  },
+  "homepage": "https://tracysuzanne321.github.io/cats4lyf/"
 }
